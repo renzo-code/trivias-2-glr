@@ -1,0 +1,97 @@
+@import './base/normalize';
+@import './base/reset';
+
+$font-base-size: 62.5%;
+$color-link: #000;
+$color-outline : #00b33d;
+$break-tablet: 768px;
+$break-mobile: 360px;
+
+* {
+  box-sizing: border-box;
+  font-family: 'Public Sans', sans-serif;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+html {
+  -ms-text-size-adjust: 100%;
+  font-size: $font-base-size;
+  -webkit-text-size-adjust: 100%;
+
+  @media (max-width: $break-tablet) {
+      font-size: 58%;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+.MenuItemActive {
+  position: relative;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+  color: $color-outline;
+  font-size: 16px;
+  cursor: pointer;
+}
+.MenuItemActive::before {
+  content: '';
+    width: 100%;
+    height: 10px;
+    background: $color-outline;
+    position: absolute;
+    bottom: -32px;
+}
+
+.MenuItem {
+  position: relative;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+  color: #7b7b7b;
+  font-size: 16px;
+  cursor: pointer;
+}
+.MenuItem :hover {
+  color: $color-outline;
+}
+
+
+.MenuItemMobile {
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+  color: #7b7b7b;
+  font-size: 16px;
+  padding: 13px 0 13px 20px;
+  border-bottom: solid 1px #ececec;
+}
+.MenuItemActiveMobile {
+  color: $color-outline !important;
+}
+
+.react-share__ShareButton {
+  margin: 10px;
+}
+
+.ItemSections {
+  cursor: pointer;
+	padding-top: 20px;
+  font-size: 15px;
+  display: block;
+  text-decoration: none;
+  color: #cedbd3;
+}
+.ItemSections :hover {
+  text-decoration: currentcolor solid underline;
+    cursor: pointer;
+}
+
+@media (max-width: $break-mobile){
+  .ItemSections {
+    font-size: 12px;
+  }
+} 

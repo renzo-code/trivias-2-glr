@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./"
+  }
+}
+
+// <script type="application/ld+json">
+//   {
+//     "@context": "https://schema.org",
+//     "@type": "NewsArticle",
+//     "url": "https://elpopular.pe/actualidad/2021/02/22/martin-vizcarra-declaran-procedente-denuncias-su-vacunacion-irregular-covid-19-50576",
+//     "articleSection": "Actualidad",
+//     "headline": "Declaran procedente denuncias contra Vizcarra por vacunación irregular con dosis Sinopharm",
+//     "description": "Subcomisión de Acusaciones Constitucionales del Congreso aprobó informe que acusa al exmandatario por el escándalo Vacunagate por juicio y antejuicio político.",
+//     "articleBody": " La Subcomisión de Acusaciones Constitucionales del Congreso aprobó la tarde de este lunes el informe que declaran procedente las denuncias constitucionales contra el expresidente Martín Vizcarra por vacunarse de manera irregular con la dosis Sinopharm contra el nuevo coronavirus (COVID-19).",
+//     "keywords": "",
+//     "dateModified": "2021-02-22T08:31:23-05:00",
+//     "datePublished": "2021-02-22T08:31:23-05:00"
+//     "publisher": {
+//       "@type": "Organization",
+//       "name": "perucheck.pe",
+//       "url": "https://elpopular.pe/actualidad/2021/02/22/martin-vizcarra-declaran-procedente-denuncias-su-vacunacion-irregular-covid-19-50576",
+//       "sameAs": [
+//         "https://www.facebook.com/elpopular.pe/",
+//         "https://twitter.com/elpopular_pe/"
+//       ],
+//       "logo": {
+//         "@type": "ImageObject",
+//         "url": "https://elpopular.pe/static/images/logo_popular.png",
+//         "width": 220,
+//         "height": 28
+//       },
+//     },
+//     "author": {
+//       "@type": "Person",
+//       "name": "edgar.rivadeneyra"
+//     },
+//     "mainEntityOfPage": {
+//       "@type": "WebPage",
+//       "@id": "https://elpopular.pe/actualidad/2021/02/22/martin-vizcarra-declaran-procedente-denuncias-su-vacunacion-irregular-covid-19-50576"
+//     },
+
+//     "image": {
+//       "@list": [
+//         {
+//           "@type": "ImageObject",
+//           "url": "https://imgmedia.elpopular.pe/1200x660/elpopular/original/2021/02/22/6033fc76614a9e73573766ad.jpg",
+//           "width": 1200,
+//           "height": 660
+//         }
+//       ]
+//     },
+    
+//   }
+// </script>
