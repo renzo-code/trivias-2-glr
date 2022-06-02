@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.larepublica.pe/favicon-16x16.png"/>
         <link rel="icon" type="image/x-icon" href="https://cdn.larepublica.pe/favicon.ico"></link>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
       
         <title>LR Especiales | Trivias</title>

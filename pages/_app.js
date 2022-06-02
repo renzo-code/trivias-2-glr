@@ -18,10 +18,10 @@ class MyApp extends App {
     const API = `${URL_BASE}/api-cronos/search?query=spotlight&id=60e333bf43e10912fb48da92`;
 
     console.log("API", API)
-    if (!cacheMenu.has(['menuAlertaWeb'])) {
-        const _dataAlertWeb = fetchContent(API).then(resp => resp[0]);
-        cacheMenu('menuAlertaWeb', _dataAlertWeb);
-    }
+    // if (!cacheMenu.has(['menuAlertaWeb'])) {
+    //     const _dataAlertWeb = fetchContent(API).then(resp => resp[0]);
+    //     cacheMenu('menuAlertaWeb', _dataAlertWeb);
+    // }
 
     let pageProps = {}
     if (Component.getInitialProps) {
