@@ -3,21 +3,39 @@ import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import BlockVideo from './BlockVideo'
 import BtnConfirmed from 'components/BtnConfirmed'
+import Modal from 'components/Modal/modal'
 import { isEmpty } from 'ramda'
 
-const SelectVideos = ({ title, typeVideo, onClick, index, idQuestion, answerPainted, isCorrectResponse, numIndex, titleTrue }) => {
+const SelectVideos = ({
+  title,
+  typeVideo,
+  onClick,
+  index,
+  idQuestion,
+  answerPainted,
+  isCorrectResponse,
+  numIndex,
+  titleTrue,
+  // setStateModal,
+  // stateModal
+}) => {
   const posterDefault = "https://media.cdn.republica.gt/032022/1647294957034.webp?cw=753&ch=423&extw=jpg"
 
   const [responseCorrect, setResponseCorrect] = useState(null)
-  const [ isExist, setIsExist ] = useState(false)
+  const [isExist, setIsExist] = useState(false)
 
+  const [stateModal, setStateModal] = useState(typeVideo.map((x, i) => {
+    let name = 'modal'+i
+    return { [name]: false }
+  }))
+  console.log('CLICK VIDEO ', stateModal)
   useMemo(() => {
     if (numIndex == index) {
       if (isCorrectResponse === true) {
         setIsExist(true)
         setResponseCorrect(
           <ResponseTrue>
-            Respuesta Correcta
+            Respuesta correcta.
           </ResponseTrue>
         )
       }
@@ -25,13 +43,13 @@ const SelectVideos = ({ title, typeVideo, onClick, index, idQuestion, answerPain
         setIsExist(true)
         setResponseCorrect(
           <ResponseFalse>
-            Respuesta Incorrecta, la respuesta correcta es : {titleTrue}
+            Respuesta incorrecta, la respuesta correcta es: {titleTrue}.
           </ResponseFalse>
         )
       }
     }
   }, [numIndex, index, isCorrectResponse, titleTrue])
-
+  console.log('typeVideo', typeVideo.length)
   return (
     <Content id={`${index + 1}`}>
       <Title>{title}</Title>
@@ -41,16 +59,52 @@ const SelectVideos = ({ title, typeVideo, onClick, index, idQuestion, answerPain
           typeVideo.map((item, i) => {
             return (
               <>
-                <BlockVideo
-                  answerPainted={answerPainted}
-                  idReponse={item?.idReponse}
-                  key={i}
-                  onClick={() => onClick(index, item, title, idQuestion, typeVideo)}
-                  url={item?.multimedia?.path}
-                  poster={posterDefault}
-                  nameButton={item?.text}
-                  disabled={isExist}
-                />
+                <div onClick={() => setStateModal(stateModal.map((x) => {
+                    if (Object.keys(x)[0] === ('modal'+i)) {
+                      return { ['modal'+i]: true }
+                    }
+                    return x
+                  })
+                )}>
+                  <BlockVideo
+                    answerPainted={answerPainted}
+                    idReponse={item?.idReponse}
+                    key={i}
+                    idx={i}
+                    onClick={() => onClick(index, item, title, idQuestion, typeVideo)}
+                    url={item?.multimedia?.path}
+                    poster={posterDefault}
+                    nameButton={item?.text}
+                    disabled={isExist}
+                    playVideo={false}
+                    viewBtn={true}
+                  />
+                </div>
+                {console.log('stateModal[i]', stateModal[i]['modal'+i])}
+                {console.log('iiii : ', i )}
+                <Modal
+                  stateModal={stateModal[i]['modal'+i]}
+                  setStateModal={setStateModal}
+                  title={title}
+                  showHeader={true}
+                  idx={i}
+                >
+                  <Contenido>
+                    <BlockVideo
+                      answerPainted={answerPainted}
+                      idReponse={item?.idReponse}
+                      key={i}
+                      idx={i}
+                      onClick={() => onClick(index, item, title, idQuestion, typeVideo)}
+                      url={item?.multimedia?.path}
+                      poster={''}
+                      nameButton={item?.text}
+                      disabled={isExist}
+                      playVideo={true}
+                      viewBtn={false}
+                    />
+                  </Contenido>
+                </Modal>
               </>
             )
           })
@@ -103,10 +157,10 @@ const ResponseFalse = styled.h1`
   font-size: 18px;
   font-style: oblique;
   text-align: center;
-  border: solid 3px red;
+  border: solid 3px #D82239;
   padding: 10px;
   border-radius: 5px;
-  background-color: red;
+  background-color: #D82239;
 `
 const ResponseTrue = styled.h1`
   width: 100%;
@@ -118,4 +172,26 @@ const ResponseTrue = styled.h1`
   padding: 10px;
   border-radius: 5px;
   background-color: green;
+`
+const Contenido = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		font-size: 42px;
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+
+	p {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	img {
+		width: 100%;
+		vertical-align: top;
+		border-radius: 3px;
+	}
 `

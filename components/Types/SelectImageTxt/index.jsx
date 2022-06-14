@@ -16,9 +16,9 @@ const SelectImageTxt = ({
   numIndex, 
   titleTrue 
 }) => {
-  console.log('titleTrue', titleTrue)
-  console.log('numIndex', numIndex)
-  console.log('isCorrectRespomse', isCorrectResponse)
+  // console.log('titleTrue', titleTrue)
+  // console.log('numIndex', numIndex)
+  // console.log('isCorrectRespomse', isCorrectResponse)
 
   const [ responseCorrect, setResponseCorrect ] = useState(null)
   const [ isExist, setIsExist ] = useState(false)
@@ -29,7 +29,7 @@ const SelectImageTxt = ({
         setIsExist(true)
         setResponseCorrect(
           <ResponseTrue>
-            Respuesta Correcta
+            Respuesta correcta.
           </ResponseTrue>
         )
       } 
@@ -37,7 +37,7 @@ const SelectImageTxt = ({
         setIsExist(true)
         setResponseCorrect(
           <ResponseFalse>
-            Respuesta Incorrecta, la respuesta correcta es : {titleTrue}.
+            Respuesta incorrecta, la respuesta correcta es: {titleTrue}.
           </ResponseFalse>
         )
       }
@@ -63,6 +63,7 @@ const SelectImageTxt = ({
                     key={i}
                     onClick={() => onClick(index, item, title, idQuestion, typeImageText)}
                     nameBtn={item?.text}
+                    disabled={isExist}
                   />
                 </>
               )
@@ -81,7 +82,7 @@ const Content = styled.div`
   width: 90%;
   min-height: 400px;
   height: 100%;
-  margin: 20px auto;
+  margin: 50px auto;
 `
 const WrapperContent = styled.div`
   height: 100%;
@@ -125,10 +126,10 @@ const ResponseFalse = styled.h1`
   font-size: 18px;
   font-style: oblique;
   text-align: center;
-  border: solid 3px red;
+  border: solid 3px #D82239;
   padding: 10px;
   border-radius: 5px;
-  background-color: red;
+  background-color: #D82239;
 `
 const ResponseTrue = styled.h1`
   width: 100%;

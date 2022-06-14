@@ -9,7 +9,7 @@ const SocialBar = () => {
     <>
       <div className='social'>
         <div className='wrapperF'>
-          <FacebookShareButton url='larepublica.pe' quote='soy el titulo'>
+          <FacebookShareButton url='https://especiales.larepublica.pe/trivias-premios-oscar-2022-ganadores' quote='Conoce los ganadores a los Premios Oscar 2021, dónde verlas, haz tus resultados.'>
             <ContentIconF>
               <FontAwesomeIcon icon={faFacebookF}/>
             </ContentIconF>
@@ -17,7 +17,7 @@ const SocialBar = () => {
         </div>
 
         <div>
-          <TwitterShareButton url='elpopular.pe' title='soy el titulo'>
+          <TwitterShareButton url='https://especiales.larepublica.pe/trivias-premios-oscar-2022-ganadores' title='Conoce los ganadores a los Premios Oscar 2021, dónde verlas, haz tus resultados.'>
             <ContentIconT>
               <FontAwesomeIcon icon={faTwitter}/>
             </ContentIconT>
@@ -25,7 +25,7 @@ const SocialBar = () => {
         </div>
 
         <div>
-          <WhatsappShareButton url='libero.pe' title='soy el titulo'>
+          <WhatsappShareButton url='https://especiales.larepublica.pe/trivias-premios-oscar-2022-ganadores' title='Conoce los ganadores a los Premios Oscar 2021, dónde verlas, haz tus resultados.'>
             <ContentIconW>
               <FontAwesomeIcon icon={faWhatsapp}/>
             </ContentIconW>

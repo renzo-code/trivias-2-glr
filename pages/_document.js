@@ -32,10 +32,12 @@ export default class MyDocument extends Document {
     return (
       <Html lang="es">
       <Head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
         {this.sheet}
       </Head>
         <body>
           <Main />
+          <div id="portal"/>
           <NextScript />
         </body>
       </Html>

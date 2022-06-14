@@ -6,17 +6,14 @@ const Footer = () => {
   return(
     <Content>
       <Wrapper>
-        <Tip>Fecha de última modificación:</Tip><Text> 08 de abril de 2022</Text>
+        <Tip>Fecha de última modificación:</Tip><Text> 06 de Junio de 2022</Text>
       </Wrapper>
       <br></br><br></br>
       <Wrapper>
-        <Tip>Texto:</Tip><Text>Milagros Requena Calderón</Text>
+        <Tip>Texto:</Tip><Text>Cine y Series LR</Text>
       </Wrapper>
       <Wrapper>
         <Tip>Desarrollo Web:</Tip><Text>Renzo Neira</Text>
-      </Wrapper>
-      <Wrapper>
-        <Tip>Edición:</Tip><Text>Lorem ipsum</Text>
       </Wrapper>
       <br></br><br></br>
       <Text>© Grupo La República</Text>

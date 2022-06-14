@@ -25,7 +25,7 @@ const SelectImage = ({
         setIsExist(true)
         setResponseCorrect(
           <ResponseTrue>
-            Respuesta Correcta
+            Respuesta correcta.
           </ResponseTrue>
         )
       }
@@ -33,7 +33,7 @@ const SelectImage = ({
         setIsExist(true)
         setResponseCorrect(
           <ResponseFalse>
-            Respuesta Incorrecta, la respuesta correcta es : {titleTrue}.
+            Respuesta incorrecta, la respuesta correcta es: {titleTrue}.
           </ResponseFalse>
         )
       }
@@ -111,10 +111,10 @@ const ResponseFalse = styled.h1`
   font-size: 18px;
   font-style: oblique;
   text-align: center;
-  border: solid 3px red;
+  border: solid 3px #D82239;
   padding: 10px;
   border-radius: 5px;
-  background-color: red;
+  background-color: #D82239;
 `
 const ResponseTrue = styled.h1`
   width: 100%;

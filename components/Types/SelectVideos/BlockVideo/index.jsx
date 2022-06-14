@@ -3,7 +3,17 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import styled from 'styled-components'
 
-const BlockVideo = ({url, poster, nameButton, onClick, idReponse, answerPainted, disabled}) => {
+const BlockVideo = ({
+  url,
+  poster,
+  nameButton,
+  onClick,
+  idReponse,
+  answerPainted,
+  disabled,
+  playVideo,
+  viewBtn
+  }) => {
 
   const res = answerPainted?.includes(idReponse) ? '#D82239': 'white'
   const resBor = answerPainted?.includes(idReponse) ? '3px solid #D82239;': '3px solid #BEBEBE;'
@@ -12,23 +22,27 @@ const BlockVideo = ({url, poster, nameButton, onClick, idReponse, answerPainted,
     <WrapperVideo>
       <ReactPlayer
         url={url}
-        playing
+        playing={playVideo}
         width="100%"
         height="70%"
         light={poster}
-        controls="true"
+        controls
+        
       />
-      <BlockBtn>
-        <ButtonVideo
-          disabled={disabled}
-          backcolor={res}
-          resBor={resBor}
-          resCol={resCol}
-          onClick={onClick}
-        >
-        {nameButton}
-        </ButtonVideo>
-      </BlockBtn>
+      {
+        viewBtn &&
+        <BlockBtn>
+          <ButtonVideo
+            disabled={disabled}
+            backcolor={res}
+            resBor={resBor}
+            resCol={resCol}
+            onClick={onClick}
+          >
+          {nameButton}
+          </ButtonVideo>
+        </BlockBtn>
+      }
     </WrapperVideo>
   )
 }
@@ -48,7 +62,7 @@ const WrapperVideo = styled.div`
     margin-bottom: 10px;
   }
   @media (max-width: 580px){
-    width: 210px;
+    width: 250px;
     height: 150px;
     margin-bottom: 15px;
   }

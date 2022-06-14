@@ -14,10 +14,12 @@ const Layout = ({ children }) => {
         <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.larepublica.pe/favicon-16x16.png"/>
         <link rel="icon" type="image/x-icon" href="https://cdn.larepublica.pe/favicon.ico"></link>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
-      
-        <title>LR Especiales | Trivias</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>   
+        <link rel="canonical" href="https://especiales.larepublica.pe/trivias-premios-oscar-2022-ganadores" />
+        <title>LR Especiales | Trivias | Premios Oscar Ganadores 2022</title>
+
+        <meta name="MobileOptimized" content="width" />
+        <meta name="HandheldFriendly" content="true" />
       </NextHead>
       <Wrapper>
         <Header/>
