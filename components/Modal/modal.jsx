@@ -41,19 +41,22 @@ const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,.1);
-  padding: 40px;
+  background: rgba(0,0,0,.8);
+  padding: 40px 56px 40px 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 600px){
+    padding: 0 22px 0 3px;
+  }
 `
 const ContenedorModal = styled.div`
-  width: 500px;
+  width: 900px;
   height: auto;
   background-color: white;
   position: relative;
   border-radius: 5px;
-  box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100,100,111,0.5) 0px 7px 29px 0px;
   padding: 20px;
 `
 const EncabezadoModal = styled.div`
@@ -61,13 +64,15 @@ const EncabezadoModal = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  padding-right: 30px;
   border-bottom: 1px solid #D82239;
 
   h3 {
     font-weight: 500;
     font-size: 16px;
     color: #D82239;
+    line-height: 18px;
   }
 `
 const BotonCerrar = styled.button`
@@ -91,5 +96,6 @@ const BotonCerrar = styled.button`
   svg {
     width: 100%;
     height: 100%;
+    color: #D82239;
   }
 `

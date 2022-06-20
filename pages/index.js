@@ -121,7 +121,7 @@ const Home = ({ dataGet, dataShow }) => {
     [VIDEO]: (item, i) => <SelectVideos
               key={i}
               idQuestion={item?._id}
-              // onClick={captureData}
+              onClick={captureData}
               // setStateModal={setStateModal}
               // stateModal={stateModal}
               index={i}

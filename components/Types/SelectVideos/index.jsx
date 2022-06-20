@@ -2,8 +2,8 @@ import React, { useMemo, useState } from 'react'
 
 import styled from 'styled-components'
 import BlockVideo from './BlockVideo'
-import BtnConfirmed from 'components/BtnConfirmed'
 import Modal from 'components/Modal/modal'
+import ModalBlockVideo from './BlockVideo/modalBlock'
 import { isEmpty } from 'ramda'
 
 const SelectVideos = ({
@@ -15,12 +15,9 @@ const SelectVideos = ({
   answerPainted,
   isCorrectResponse,
   numIndex,
-  titleTrue,
-  // setStateModal,
-  // stateModal
+  titleTrue
 }) => {
   const posterDefault = "https://media.cdn.republica.gt/032022/1647294957034.webp?cw=753&ch=423&extw=jpg"
-
   const [responseCorrect, setResponseCorrect] = useState(null)
   const [isExist, setIsExist] = useState(false)
 
@@ -90,9 +87,18 @@ const SelectVideos = ({
                   idx={i}
                 >
                   <Contenido>
-                    <BlockVideo
+                    <ModalBlockVideo
+                      idReponse={item?.idReponse}
+                      heightPlayer={'70%'}
+                      key={i}
+                      idx={i}
+                      url={item?.multimedia?.path}
+                      playVideo={true}
+                    />
+                    {/* <BlockVideo
                       answerPainted={answerPainted}
                       idReponse={item?.idReponse}
+                      heightPlayer={'70%'}
                       key={i}
                       idx={i}
                       onClick={() => onClick(index, item, title, idQuestion, typeVideo)}
@@ -102,7 +108,7 @@ const SelectVideos = ({
                       disabled={isExist}
                       playVideo={true}
                       viewBtn={false}
-                    />
+                    /> */}
                   </Contenido>
                 </Modal>
               </>
@@ -122,7 +128,6 @@ const Content = styled.div`
   min-height: 400px;
   height: 100%;
   margin: 40px auto;
-
   @media (max-width: 580px){
     width: 98%;
   }
@@ -177,7 +182,6 @@ const Contenido = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	h1 {
 		font-size: 42px;
 		font-weight: 700;

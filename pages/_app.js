@@ -31,7 +31,7 @@ class MyApp extends App {
     pageProps = {
       ...pageProps,
       extraData: {
-          menuAlertaWeb: await cacheMenu.get(['menuAlertaWeb']) || {},
+          menuAlertaWeb: await cacheMenu.get(['menuAlertaWeb']) ,
       }
     }
     return { pageProps }

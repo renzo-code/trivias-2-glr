@@ -12,38 +12,48 @@ const BlockVideo = ({
   answerPainted,
   disabled,
   playVideo,
-  viewBtn
+  viewBtn,
   }) => {
 
   const res = answerPainted?.includes(idReponse) ? '#D82239': 'white'
   const resBor = answerPainted?.includes(idReponse) ? '3px solid #D82239;': '3px solid #BEBEBE;'
   const resCol = answerPainted?.includes(idReponse) ? 'white': 'black'
+
   return (
-    <WrapperVideo>
-      <ReactPlayer
-        url={url}
-        playing={playVideo}
-        width="100%"
-        height="70%"
-        light={poster}
-        controls
-        
-      />
-      {
-        viewBtn &&
-        <BlockBtn>
-          <ButtonVideo
-            disabled={disabled}
-            backcolor={res}
-            resBor={resBor}
-            resCol={resCol}
-            onClick={onClick}
-          >
-          {nameButton}
-          </ButtonVideo>
-        </BlockBtn>
+    <>
+      <WrapperVideo>
+        <ReactPlayer
+        // config={{file: {attributes: { playVideo: false }}}}
+          style={{pointerEvents: playVideo ? true : 'none'}}
+          url={url}
+          playing={playVideo}
+          width="100%"
+          height={"70%"}
+          light={poster}
+          controls
+          
+        />
+        {
+          viewBtn &&
+          <BlockBtn>
+            <ButtonVideo
+              disabled={disabled}
+              backcolor={res}
+              resBor={resBor}
+              resCol={resCol}
+              onClick={onClick}
+            >
+            {nameButton}
+            </ButtonVideo>
+          </BlockBtn>
+        }
+      </WrapperVideo>
+      {/* <style jsx="true">{`
+      .react-player__shadow{
+        display: none;
       }
-    </WrapperVideo>
+      `}</style> */}
+    </>
   )
 }
 

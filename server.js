@@ -10,8 +10,8 @@ const LRUCache = require('lru-cache')
 const app = next({ dev })
 const handle = app.getRequestHandler()
 const port = parseInt(process.env.PORT, 10) || 3000
-const endPoint = process.env.ENDPOINT
-const tokenGraphql = process.env.TOKEN_GRAPHQL
+const endPoint = 'https://qacronosapi2.glr.pe/graphql/trivia'
+const tokenGraphql = 'c5c56J7f2e07H46h3F1a8h9hJg3cfb06a2g53DAC43'
 
 const ssrCacheServer = new LRUCache({
   maxSize: 100 * 1024 * 1024,
